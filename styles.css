@@ -1,0 +1,11 @@
+.headerBox{
+    text-align: center;
+}
+header{
+    width: 100%;
+    border-width: 10px;
+    border-style: solid;
+}
+h1{
+    font-size: 2px;
+}
