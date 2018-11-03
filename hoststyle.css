@@ -1,7 +1,21 @@
+body{
+    margin: 0;
+    background-color: hsl(0, 0%, 85%);
+}
 h1{
     text-align: center;
     font-family: Cambria;
     font-size: 50px;
+    margin-top: 0;
+    padding-top: 20px;
+    margin-bottom: 100px;
+}
+header{
+    background-color: hsl(0, 0%, 73%);
+    height: 100px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 .messageBox{
     width: 90%;
@@ -10,5 +24,5 @@ h1{
     border-width: 3px;
     border-color: black;
     margin: auto;
-    overflow: scroll;
+    overflow-y: scroll;
 }
