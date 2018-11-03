@@ -2,28 +2,26 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express()
 app.use(bodyParser.json());
+var request = require("request");
+var tkn;
+//var theFone;
+//var num;
 
-// Generates listener
+// Generates sms listener
 app.post('/Test', (req, res) => {
   console.log(req.body.message);
-  res.status(200).send("Hello World");
+  console.log(req.body.from);
 })
 
-
-// Generates the server
+// Generates the get request for the website
 app.get('/', (req, res) => {
     res.sendFile(__dirname+'/login.html')
 })
 
-
+// Hosts server for website
 const server = app.listen(3000, () => {
 	console.log('http://localhost:3000')
 });
-
-
-
-var request = require("request");
-
 
 // Generates the token for the API
 var options = { method: 'POST',
@@ -34,19 +32,18 @@ var options = { method: 'POST',
      expires: 86400 },
   json: true };
 
-var tkn;
-var theFone;
-var num;
-
+// Everything in here is authorized by the token
 request(options, function (error, response, body) {
-
 
   // Gets the auth token
   if (error) throw new Error(error);
   tkn = body.auth.token;
   console.log(body);
 
-  // Creates a fonenumber
+  // For future implementation, not necessary for hackathon because
+  // we only use one number and its constant
+  /*
+  // Gets a fonenumber
   var options = { method: 'GET',
   url: 'https://api.fonestorm.com/v2/fonenumbers',
   headers: {token: tkn},
@@ -58,9 +55,9 @@ request(options, function (error, response, body) {
     num = body.fonenumbers[0];
     console.log(body);
   });
-
+  */
   
-  // Generates listener
+  // Generates Callback for the fone
   var options = { method: 'POST',
   url: 'https://api.fonestorm.com/v2/messages/receive_notify',
   body: { fonenumber: '3212344381', type: 'Callback', url: "https://7f56d64a.ngrok.io/Test", method: "JSON" },
@@ -90,11 +87,5 @@ request(options, function (error, response, body) {
     console.log(body);
   });
   */
-
-
-
-
-  //
-
 
 });
