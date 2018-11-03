@@ -14,14 +14,19 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script> var deh = 0; </script>
   <script>
     $(function () {
       var socket = io();
 
       socket.on('chatMessage', function(msg){
-        console.log(msg);
+        
         $('#messages').append($('<li>').text(msg));
+        $('#messages').append($('<b id=\"" + deh + "\">test</b>'));
+        deh = deh + 1;
+        console.log("Deh:");
         window.scrollTo(0, document.body.scrollHeight);
+        
       });
     });
   </script>
