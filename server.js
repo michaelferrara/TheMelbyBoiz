@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express()
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 app.use(bodyParser.json());
 var request = require("request");
 var tkn;
@@ -11,11 +13,20 @@ var tkn;
 app.post('/Test', (req, res) => {
   console.log(req.body.message);
   console.log(req.body.from);
+  
+  var theMessage = req.body.message;
+
+  io.on('connection', function(socket){
+    socket.on('chat message', function(msg){
+      io.emit('theMessage', msg);
+    });
+  });  
+
 })
 
 // Generates the get request for the website
 app.get('/', (req, res) => {
-    res.sendFile(__dirname+'/login.html')
+    res.sendFile(__dirname+'/index.html')
 })
 
 // Hosts server for website
@@ -60,7 +71,7 @@ request(options, function (error, response, body) {
   // Generates Callback for the fone
   var options = { method: 'POST',
   url: 'https://api.fonestorm.com/v2/messages/receive_notify',
-  body: { fonenumber: '3212344381', type: 'Callback', url: "https://7f56d64a.ngrok.io/Test", method: "JSON" },
+  body: { fonenumber: '3212344381', type: 'Callback', url: "http://e83c0fa7.ngrok.io/Test", method: "JSON" },
   headers: {token: tkn},
   json: true };
 
