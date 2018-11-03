@@ -4,25 +4,24 @@ h1{
     font-size: 50px;
     font-family: "Lato", sans-serif;
     font-weight: 400;
+    margin: 0;
+    padding-top: 20px;
 }
 body{
-    background-color: white;
+    background-color: lightgray;
+    margin: 0;
 }
 p{
     font-size: 30px;
     margin-top: 10px;
     margin-bottom: 0;
     text-align: center;
-
 }
-
-.welcomeBox{
-    text-align: center;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 3px;
-    border-color: white;
-    background-color: lightgray;
+header{
+    margin: 0;
+    width: 100%;
+    background-color: hsl(0, 0%, 73%);
+    height: 100px;
 }
 .clickable{
     width: 200px;
@@ -32,6 +31,7 @@ p{
     border-color: black;
     border-style: solid;
     border-width: 3px;
+    border-radius: 10px;
 }
 
 .buttonHolder{
