@@ -1,0 +1,23 @@
+{
+  "name": "themelbyboiz",
+  "version": "1.0.0",
+  "description": "Website app for an inclass messaging tool ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelferrara/TheMelbyBoiz.git"
+  },
+  "author": "Diego Gomez, Daniel Lu, Micheal Ferrara, Blake Smetanka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelferrara/TheMelbyBoiz/issues"
+  },
+  "homepage": "https://github.com/michaelferrara/TheMelbyBoiz#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
