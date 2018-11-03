@@ -24,9 +24,15 @@ app.post('/Test', (req, res) => {
 
 })
 
+app.use("/styles", express.static(__dirname + '/styles'));
+
 // Generates the get request for the website
 app.get('/', (req, res) => {
     res.sendFile(__dirname+'/index.html')
+})
+
+app.get('/hostpage', (req, res) => {
+    res.sendFile(__dirname+'/hostpage.html')
 })
 
 // Hosts server for website
@@ -71,7 +77,7 @@ request(options, function (error, response, body) {
   // Generates Callback for the fone
   var options = { method: 'POST',
   url: 'https://api.fonestorm.com/v2/messages/receive_notify',
-  body: { fonenumber: '3212344381', type: 'Callback', url: "http://e83c0fa7.ngrok.io/Test", method: "JSON" },
+  body: { fonenumber: '3212344381', type: 'Callback', url: "http://679a24f3.ngrok.io/Test", method: "JSON" },
   headers: {token: tkn},
   json: true };
 
