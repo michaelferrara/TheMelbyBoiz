@@ -18,10 +18,11 @@ p{
 
 .welcomeBox{
     text-align: center;
-    border-style: groove;
+    border-style: solid;
     border-radius: 10px;
     border-width: 3px;
-    border-color: rgb(27, 26, 26);
+    border-color: white;
+    background-color: lightgray;
 }
 .clickable{
     width: 200px;
