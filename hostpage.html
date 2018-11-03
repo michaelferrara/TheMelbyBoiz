@@ -8,15 +8,23 @@
 </head>
 
 <body>
-  <header><h1>(XXX)XXX-XXXX</h1></header>
+  <header><h1>(321)234-4381</h1></header>
   <div class="messageBox">
-    <ol>
-      <li>Test1</li>
-      <li>Test2</li>
-      <li>Test3</li>
-      <li>Test4</li>
-    </ol>
+    <ol id='messages'></ol>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    $(function () {
+      var socket = io();
+
+      socket.on('chatMessage', function(msg){
+        console.log(msg);
+        $('#messages').append($('<li>').text(msg));
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -16,11 +16,8 @@ app.post('/Test', (req, res) => {
   
   var theMessage = req.body.message;
 
-  io.on('connection', function(socket){
-    socket.on('chat message', function(msg){
-      io.emit('theMessage', msg);
-    });
-  });  
+  
+  io.emit('chatMessage', theMessage);
 
 })
 
@@ -36,7 +33,7 @@ app.get('/hostpage', (req, res) => {
 })
 
 // Hosts server for website
-const server = app.listen(3000, () => {
+const server = http.listen(3000, () => {
 	console.log('http://localhost:3000')
 });
 
@@ -77,7 +74,7 @@ request(options, function (error, response, body) {
   // Generates Callback for the fone
   var options = { method: 'POST',
   url: 'https://api.fonestorm.com/v2/messages/receive_notify',
-  body: { fonenumber: '3212344381', type: 'Callback', url: "http://679a24f3.ngrok.io/Test", method: "JSON" },
+  body: { fonenumber: '3212344381', type: 'Callback', url: "http://6b24df11.ngrok.io/Test", method: "JSON" },
   headers: {token: tkn},
   json: true };
 
