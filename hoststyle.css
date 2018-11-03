@@ -26,3 +26,11 @@ header{
     margin: auto;
     overflow-y: scroll;
 }
+.messageBox ol{
+
+}
+.messageBox ol li{
+    font-size: 40px;
+    margin-left: 20px;
+    font-family: Cambria;
+}
