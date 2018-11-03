@@ -1,0 +1,13 @@
+d3 js
+ceasium js
+
+group outliers
+group spacially on map
+group on list
+
+adjacency factor for pointing out nearby points with the same severity level
+
+sorted by lon (low-high) then lat (high-low)
+
+Theirs:
+they have each node in list with asso val then other qs
