@@ -17,19 +17,37 @@
   <script> var deh = 0; </script>
   <script>
     $(function () {
-      var socket = io();
+        var socket = io();
 
-      socket.on('chatMessage', function(msg){
+        socket.on('chatMessage', function(msg){
         
-        $('#messages').append($('<li>').text(msg));
-        $('#messages').append($('<b id=\"" + deh + "\">test</b>'));
-        deh = deh + 1;
-        console.log("Deh:");
+        $('#messages').append($('<li onclick="this.remove()">' + msg + '</li>'));
+        var flash = false;
+
+        function sleep(ms)
+        {
+          return new Promise(resolve => setTimeout(resolve,ms));
+        }
+
+        async function change()
+        {
+          document.body.style.backgroundColor = '#f00';
+
+          await sleep(2000);
+
+          document.body.style.backgroundColor = '#d9d9d9';
+        }
+
+        change();
+
         window.scrollTo(0, document.body.scrollHeight);
+
         
+
       });
     });
   </script>
+  
 </body>
 
 </html>
