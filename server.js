@@ -22,6 +22,7 @@ app.post('/Test', (req, res) => {
 })
 
 app.use("/styles", express.static(__dirname + '/styles'));
+app.use("/audio", express.static(__dirname + '/audio'));
 
 // Generates the get request for the website
 app.get('/', (req, res) => {

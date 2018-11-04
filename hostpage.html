@@ -5,9 +5,6 @@
 <head>
   <title>Host Room</title>
   <link rel="stylesheet" href="/styles/hoststyle.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-  <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
@@ -19,8 +16,7 @@
   </div>
 
   <p class="tipText">Click on a question once it has been answered to remove it from the screen.</p>
-  <input type="checkbox" class="soundCheck" value="Enable sound"><span class="soundText">Enable Sound</span> 
-
+  <input type="checkbox" class="soundCheck" id="chimePlayer" value="Enable sound"><span class="soundText">Enable Sound</span> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script> var deh = 0; </script>
@@ -32,8 +28,13 @@
         
         $('#messages').append($('<li onclick="this.remove()">' + msg + '</li>'));
 
-        var snd = new Audio("Chime.wav");
-        snd.play();
+        var audio = new Audio('/audio/Chime.wav'),
+        chimeCheckbox = document.getElementById('chimePlayer'),
+        playSound = function () {
+        if (chimeCheckbox.checked) {
+          audio.play();
+        }
+        };
 
         function sleep(ms)
         {
@@ -45,7 +46,7 @@
         async function change()
         {
           document.body.style.backgroundColor = '#f00';
-          
+          playSound();
           await sleep(2000);
 
           document.body.style.backgroundColor = '#f2f2f2';
