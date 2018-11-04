@@ -74,7 +74,7 @@ request(options, function (error, response, body) {
   // Generates Callback for the fone
   var options = { method: 'POST',
   url: 'https://api.fonestorm.com/v2/messages/receive_notify',
-  body: { fonenumber: '3212344381', type: 'Callback', url: "http://8bb418ca.ngrok.io/Test", method: "JSON" },
+  body: { fonenumber: '3212344381', type: 'Callback', url: "http://053a40c8.ngrok.io/Test", method: "JSON" },
   headers: {token: tkn},
   json: true };
 
