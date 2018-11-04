@@ -5,6 +5,9 @@
 <head>
   <title>Host Room</title>
   <link rel="stylesheet" href="/styles/hoststyle.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
@@ -16,10 +19,13 @@
   </div>
 
   <p class="tipText">Click on a question once it has been answered to remove it from the screen.</p>
-  <input type="checkbox" class="soundCheck" value="Enable sound"><span class="soundText">Enable Sound</span>
+  <input type="checkbox" class="soundCheck" value="Enable sound"><span class="soundText">Enable Sound</span> 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script> var deh = 0; </script>
   <script>
     $(function () {
@@ -28,19 +34,21 @@
         socket.on('chatMessage', function(msg){
         
         $('#messages').append($('<li onclick="this.remove()">' + msg + '</li>'));
-        var flash = false;
+
+        var snd = new Audio("Chime.wav");
+        snd.play();
 
         function sleep(ms)
         {
           return new Promise(resolve => setTimeout(resolve,ms));
         }
         
-        var snd = new Audio("Chime.wav");
+        
 
         async function change()
         {
           document.body.style.backgroundColor = '#f00';
-          snd.play();
+          
           await sleep(2000);
 
           document.body.style.backgroundColor = '#d9d9d9';
