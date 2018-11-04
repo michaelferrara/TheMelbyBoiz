@@ -7,7 +7,7 @@ h1{
     font-family: Cambria;
     font-size: 50px;
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 10px;
     margin-bottom: 100px;
 }
 header{
@@ -16,6 +16,28 @@ header{
     width: 100%;
     margin-top: 0;
     margin-bottom: 30px;
+}
+.tipText{
+    margin-left: 80px;
+    font-size: 20px;
+    font-family: Cambria;
+    display: inline-block;
+}
+.soundCheck{
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.soundText{
+    font-size: 20px;
+}
+
+input[type=checkbox] {
+    transform: scale(2);
+}
+.numberDescription {
+    font-weight: 400;
+    font-size: 16px;
 }
 .messageBox{
     width: 90%;

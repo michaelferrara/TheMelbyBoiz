@@ -8,10 +8,16 @@
 </head>
 
 <body>
-  <header><h1>(321)234-4381</h1></header>
+  <header>
+    <h1>(321)234-4381 <div class="numberDescription"><em>Send questions to this number</em></div></h1>
+  </header>
   <div class="messageBox">
     <ol id='messages'></ol>
   </div>
+
+  <p class="tipText">Click on a question once it has been answered to remove it from the screen.</p>
+  <input type="checkbox" class="soundCheck" value="Enable sound"><span class="soundText">Enable Sound</span>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script> var deh = 0; </script>
