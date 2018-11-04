@@ -1,5 +1,5 @@
 h1{
-    color: black;
+    color: hsl(353, 1%, 95%);
     text-align: center;
     font-size: 50px;
     font-family: "Lato", sans-serif;
@@ -8,7 +8,7 @@ h1{
     padding-top: 20px;
 }
 body{
-    background-color: hsl(0, 0%, 85%);
+    background-color: hsl(353, 1%, 95%);
     margin: 0;
 }
 p{
@@ -20,14 +20,23 @@ p{
 header{
     margin: 0;
     width: 100%;
-    background-color: hsl(0, 0%, 73%);
+    background-color: hsl(173, 58%, 15%);
     height: 100px;
 }
 .clickable{
     width: 200px;
     height: 150px;
     font-size: 25px;
+<<<<<<< HEAD
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    background-color: hsl(173, 58%, 15%);
+    color: hsl(353, 1%, 95%);
+=======
     color: white;
+>>>>>>> 8aaf797108db36ddba915aba93d88b0535210a8d
 }
 
 .buttonHolder{

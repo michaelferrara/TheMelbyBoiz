@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: hsl(0, 0%, 85%);
+    background-color: hsl(353, 1%, 95%);
 }
 h1{
     text-align: center;
@@ -11,11 +11,12 @@ h1{
     margin-bottom: 100px;
 }
 header{
-    background-color: hsl(0, 0%, 73%);
+    background-color: hsl(173, 58%, 15%);
     height: 100px;
     width: 100%;
     margin-top: 0;
     margin-bottom: 30px;
+    color: hsl(353, 1%, 95%);
 }
 .tipText{
     margin-left: 80px;
